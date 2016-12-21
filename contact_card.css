@@ -1,0 +1,50 @@
+
+
+#entryForm {
+    padding: 20px;
+    margin: 0px 20px;
+    border-bottom: 2px solid grey;
+}
+
+#contactForm {
+    width: 500px;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+#firstNameDiv label, #lastNameDiv label {
+    display: inline-block;
+    width: 100px;
+    padding: 5px 0px;
+}
+
+#descriptionDiv label {
+    display: block;
+    padding: 5px 0px;
+}
+
+#cards {
+    margin: 20px;
+}
+
+.card {
+    width: 150px;
+    min-height: 75px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    text-align: center;
+    display: inline-block;
+}
+
+.card h1 {
+    font-size: 16px;
+}
+.card p {
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.hidden {
+    display: none;
+}

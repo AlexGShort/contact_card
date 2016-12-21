@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="contact_card.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>Coding Dojo Contact Cards</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var contactResponse;
+            $('#contactForm').submit(function() {
+                contactResponse = $(this).serializeArray();
+                // create card
+                $("<div></div>")
+                    .addClass("card")
+                    .html(`<h1>${contactResponse[0]["value"]} ${contactResponse[1]["value"]}</h1><p>Click for description!</p><p class="hidden">${contactResponse[2]["value"]}</p>`)
+                    .click(function(){$(this).children().toggle()})
+                    .appendTo("#cards");
+                $(this).trigger("reset");
+                // $(this).preventDefault();
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Dojo Contact Cards</h1>
+        <div id="entryForm">
+            <form action="" id="contactForm" method="post">
+                <div id="firstNameDiv">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" />
+                </div>
+                <div id="lastNameDiv">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" />
+                </div>
+                <div id="descriptionDiv">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="5" cols="50" name="description"></textarea>
+                </div>
+                <input type="submit" id="addContact" value="Add Contact">
+            </form>
+
+        </div> <!-- entryForm -->
+        <div id="cards">
+            <!-- <p>Cards go here</p> -->
+
+        </div> <!-- cards -->
+
+
+
+    </div> <!-- wrapper -->
+</body>
+</html>
